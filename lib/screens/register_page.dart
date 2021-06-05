@@ -1,15 +1,18 @@
-import 'package:e_commerce/constants.dart';
-import 'package:e_commerce/screens/register_page.dart';
 //import 'package:e_commerce/widgets/custom_btn.dart';
 import 'package:e_commerce/widgets/custom_input.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatefulWidget {
+import '../constants.dart';
+
+
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({ Key? key }) : super(key: key);
+
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _RegisterPageState createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +27,7 @@ class _LoginPageState extends State<LoginPage> {
                   top: 24.0,
                 ),
                 child: Text(
-                  "Welcome User,\nLogin to your account",
+                  "Create A New Account",
                   textAlign: TextAlign.center,
                   style: Constants.boldHeading,
                 ),
@@ -38,39 +41,34 @@ class _LoginPageState extends State<LoginPage> {
                     hintText: "Password...",
                   ),
                   // CustomBtn(
-                  //   text: "Login",
+                  //   text: "Create New Account",
                   //   onPressed: () {
-                  //     print("Clicked The Login Button");
+                  //     print("Clicked The register Button");
                   //   }, outlineBtn: true,
                   // )
-                ],
-              ),
-               Container(  
+                  Container(  
               margin: EdgeInsets.all(25),  
               child: FlatButton(  
-                child: Text('LogIn', style: TextStyle(fontSize: 20.0),),  
+                child: Text('Create New Account', style: TextStyle(fontSize: 20.0),),  
                 color: Colors.blueAccent,  
                 textColor: Colors.white,  
                 onPressed: () {
-                  print("Clicked The Login Button");
+                  print("Clicked The register Button");
                 },  
               ),  
             ), 
+                ],
+              ),
               Padding(
                 padding: const EdgeInsets.only(
                   bottom: 16.0,
                 ),
                 child: FlatButton(
-                  child: Text('Create New Account', style: TextStyle(fontSize: 20.0),),  
+                  child: Text('Back to login', style: TextStyle(fontSize: 20.0),),  
                 color: Colors.blueAccent,  
-                textColor: Colors.white, 
+                textColor: Colors.white,  
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => RegisterPage()
-                      ),
-                    );
+                    Navigator.pop(context);
                   },
                   //outlineBtn: true,
                 ),
